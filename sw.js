@@ -1,4 +1,4 @@
-const cacheName = 'portfolio-v1';
+const cacheName = 'portfolio-v3';
 const preCache = [
     '/',
     '/index.html',
@@ -41,5 +41,19 @@ self.addEventListener('fetch', e => {
                 console.log(error);
             }
         })()
+    );
+});
+
+self.addEventListener('activate', event => {
+    event.waitUntil(
+        caches.keys().then(cacheNamesActive => {
+            return Promise.all(
+                cacheNamesActive.map(cacheNameVersion => {
+                    if (cacheNameVersion !== cacheName) {
+                        return caches.delete(cacheNameVersion);
+                    }
+                })
+            );
+        })
     );
 });
