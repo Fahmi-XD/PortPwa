@@ -2,8 +2,8 @@
     "name": "Fahmi-XD",
     "start_url": ".",
     "display": "standalone",
-    "theme_color": "#f8fcfa",
-    "background_color": "#f8fcfa",
+    "theme_color": "#121212",
+    "background_color": "#121212",
     "icons": [
         {
             "src": "images/icons/icon1.png",
