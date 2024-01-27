@@ -5,9 +5,10 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f8fafc" />
+    
     <title>Portfolio</title>
     
-    <link rel="manifest" href="manifest.json">
     <link rel="icon" href="images/logo.jpg" />
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -25,6 +26,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
     <meta name="author" content="Fahmi XD">
+    
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body oncopy="return false" oncut="return false" onpaste="return false">
@@ -47,7 +50,7 @@
                     <li>
                         <a href="#">
                             <!-- <ion-icon name="eye"></ion-icon> -->
-                            <h1>Aku Anime</h1>
+                            <h1>Aku Animee</h1>
                             <p>MC di isekai 😋</p>
                         </a>
                     </li>
@@ -660,6 +663,13 @@
         </div>
     </section>
     
+    <script>
+        window.addEventListener("load", () => {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("sw.js")
+        }
+      })
+    </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="application/javascript" charset="utf-8">
         AOS.init();
@@ -673,18 +683,6 @@
     <script src="js/main.js" type="application/javascript" charset="utf-8"></script>
     <script src="js/home.js" type="application/javascript" charset="utf-8"></script>
     <script src="js/gsap.js" type="application/javascript" charset="utf-8"></script>
-    <script src="service-worker.js" type="application/javascript" charset="utf-8"></script>
-    <!-- Register the app's service worker. -->
-    <script>
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", function() {
-                navigator.serviceWorker
-                .register("/service-worker.js")
-                .then(res => console.log("service worker registered"))
-                .catch(err => console.log("service worker not registered", err))
-            })
-        }
-    </script>
 </body>
 
 </html>
