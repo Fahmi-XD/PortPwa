@@ -1,4 +1,4 @@
-const cacheName = 'portfolio-v3';
+const cacheName = 'portfolio-v4';
 const preCache = [
     '/',
     '/index.html',
@@ -24,17 +24,31 @@ self.addEventListener('install', e => {
     );
 });
 
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.open(cacheName).then(cache => {
+            return cache.match(event.request).then(response => {
+                const fetchPromise = fetch(event.request).then(
+                    networkResponse => {
+                        cache.put(event.request, networkResponse.clone());
+                        return networkResponse;
+                    }
+                );
+                return response || fetchPromise;
+            });
+        })
+    );
+});
+
+/*
 self.addEventListener('fetch', e => {
     e.respondWith(
         (async () => {
             const cache = await caches.open(cacheName);
             const resCache = await cache.match(e.request);
-
             if (resCache) return resCache;
-
             try {
                 const res = await fetch(e.request);
-
                 cache.put(e.request, res.clone());
                 return res;
             } catch (error) {
@@ -43,6 +57,7 @@ self.addEventListener('fetch', e => {
         })()
     );
 });
+*/
 
 self.addEventListener('activate', event => {
     event.waitUntil(
