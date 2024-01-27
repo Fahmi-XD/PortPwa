@@ -1,16 +1,16 @@
 {
-    "name": "Portfolio Fahmi XD",
+    "name": "Fahmi XD",
     "short_name": "Fahmi XD",
-    "description": "Aplikasi Portfolio dibuat dengan PWA",
-    "start_url": "/",
+    "start_url": "index.html",
     "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#000000",
+    "background_color": "#fdfdfd",
+    "theme_color": "#db4938",
+    "orientation": "portrait-primary",
     "icons": [
         {
             "src": "/images/logo.jpg",
-            "sizes": "400x400",
-            "type": "image/jpeg"
+            "type": "image/jpeg",
+            "sizes": "144x144"
         }
     ]
 }
