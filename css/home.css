@@ -1,12 +1,12 @@
 .home {
     display: flex;
-    width: 100%;
+    width: 100vw;
     height: auto;
     flex-direction: column;
     align-items: center;
     padding-left: 15px;
     padding-right: 15px;
-    overflow: hidden;
+    overflow-x: hidden;
     position: absolute;
     top: 0;
     left: 0;
@@ -34,12 +34,13 @@
 
 .hero {
     display: block;
-    width: 100%;
+    width: 100vw;
     height: auto;
     position: fixed;
     overflow: hidden;
     padding-left: 15px;
     padding-right: 15px;
+    overflow-x: hidden;
     padding-top: 4em;
 }
 
@@ -431,7 +432,7 @@
         inset -10px -10px 10px rgba(255, 255, 255, 0.3);
     border-radius: 15px;
     margin-top: 6em;
-    margin-bottom: 3em;
+    margin-bottom: 6em;
 }
 
 .story h3 {

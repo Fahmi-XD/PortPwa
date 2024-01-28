@@ -1,4 +1,4 @@
-const cacheName = 'portfolio-v4';
+const cacheName = 'portfolio-v2';
 const preCache = [
     '/',
     '/index.html',
@@ -6,9 +6,11 @@ const preCache = [
     '/js/navbar.js',
     '/js/home.js',
     '/js/gsap.js',
+    '/js/navigasi.js',
     '/css/all.css',
     '/css/home.css',
     '/css/navbar.css',
+    '/css/navigasi.css',
     '/images/hero.svg',
     '/images/logo.jpg'
 ];
