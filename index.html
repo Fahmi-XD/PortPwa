@@ -13,6 +13,7 @@
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/all.css" type="text/css" media="all" />
     <link rel="stylesheet" href="css/navbar.css" type="text/css" media="all" />
@@ -31,7 +32,7 @@
     <link rel="manifest" href="manifest.json">
 </head>
 
-<body oncopy="return false" oncut="return false" onpaste="return false">
+<body oncopy="return false" oncut="return false">
     <nav class="navbar" id="navbar" data-aos="zoom-out">
         <div class="logo">
             <img src="./images/logo.jpg" alt="Hutao Real Life" />
@@ -707,22 +708,96 @@
         </section>
         
         <section class="navigasi-tiktok">
-            <div class="story" data-aos="fade-right">
-                <h3 class="poppins-medium">Cooming Soon 🤫🧏‍♂️</h3>
+            <div class="story story-tiktok" data-aos="fade-right">
+                <h3 class="poppins-medium">Tiktok Downloader</h3>
                 <div class="story-box">
-                    <div class="line"></div>
-                    <div class="desc">
-                        <div class="text">
-                            <h4 style="opacity: 0.7; margin-bottom: 10px;">Maaf fitur ini belum selesai 😔</h4>
-                            <p>Nothing</p>
+                    <div class="text">
+                        <h4 style="opacity: 0.7; margin-bottom: 10px; font-size: 14px; text-align: center;">Website
+                            <span>TikTok Downloader</span> dibangun
+                            menggunakan
+                            <span>Node.js</span> sebagai server back-end dan
+                            memanfaatkan <span>API</span> untuk berinteraksi dengan layanan
+                            TikTok.
+                        </h4>
+                    </div>
+                    <form id="form-tiktok" class="form-tiktok" action="#" method="POST" accept-charset="utf-8">
+                        <div class="boxx">
+                            <input type="text" name="tiktok-url" id="tiktok-url" value="" maxlength="50" required />
+                            <label for="tiktok-url">Masukan Url</label>
+                        </div>
+                        <button id="form-button" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div style="margin: 0 0 !important;" class="tiktok-result post" id="tiktok-result" data-aos="zoom-out">
+                <div class="profile">
+                    <img id="tiktok-image" src="./images/logo.jpg" alt="Anjay Mabar" />
+                    <h3 id="tiktok-nama">-</h3>
+                    <p id="tiktok-username">-</p>
+                </div>
+                <div class="content">
+                    <video id="tiktok-video" width="100%" height="100%" autoplay loop controls
+                                                                                                                                            controlsList="nodownload">
+                        <source id="tiktok-media" src="" type="video/mp4">
+                    </video>
+                </div>
+                <div class="action">
+                    <div class="btn-action">
+                        <div class="action-box">
+                            <img id="image" src="./images/logo/btn-4.png" alt="Love" />
+                            <p id="tiktok-like">-</p>
+                        </div>
+                        <div class="action-box">
+                            <img id="image" src="./images/logo/btn-1.png" alt="Comment" />
+                            <p id="tiktok-komen">-</p>
+                        </div>
+                        <div class="action-box">
+                            <img id="image" src="./images/logo/btn-2.png" alt="Share" />
+                            <p id="tiktok-share">-</p>
+                        </div>
+                        <div class="action-box img-left">
+                            <img id="image" src="./images/logo/btn-6.png" alt="Save" />
+                            <p id="tiktok-save">-</p>
                         </div>
                     </div>
+                    <h3 style="font-size: 20px;" id="tiktok-see">-</h3>
+                    <h3 style="opacity: 0.7" id="tiktok-desc">-</h3>
+                    <h3 id="tiktok-day">-</h3>
                 </div>
+            </div>
+            <div class="ilham-sek">
+                <div class="story tiktok-download" data-aos="fade-left">
+                    <div class="story-box">
+                        <div class="text">
+                            <h4 style="font-size: 18px;">Download no
+                                Watermark
+                            </h4>
+                            <p style="font-size: 15px;" id="resolusi-vid">-</p>
+                            <p id="size-vid" style="opacity: 0.5; font-size: 14px">-</p>
+                        </div>
+                        <button class="button-video" id="form-button" type="button">Download</button>
+                    </div>
+                </div>
+                <div class="story tiktok-download" data-aos="fade-right">
+                    <div class="story-box">
+                        <div class="text">
+                            <h4 style="font-size: 18px;">Download Music
+                            </h4>
+                            <p style="font-size: 15px;" id="resolusi">Resolusi : -</p>
+                            <p id="size-aud" style="opacity: 0.5; font-size: 14px">-</p>
+                        </div>
+                        <button class="button-audio" id="form-button" type="button">Download</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tiktok-loading">
+                <span class="first"></span>
+                <span class="second"></span>
             </div>
         </section>
         
         <section class="navigasi-youtube">
-            <div class="story" data-aos="fade-right">
+            <div class="story" data-aos="fade-left">
                 <h3 class="poppins-medium">Comming Soon 🔥</h3>
                 <div class="story-box">
                     <div class="line"></div>
@@ -760,6 +835,14 @@
         </section>
     </section>
     
+    <div class="loading-animation">
+        <div class="loading-page">
+            <span class="first-ball"></span>
+            <span class="second-ball"></span>
+            <span class="third-ball"></span>
+        </div>
+    </div>
+    
     <script>
         window.addEventListener("load", () => {
         if ("serviceWorker" in navigator) {
@@ -772,6 +855,12 @@
     <script type="application/javascript" charset="utf-8">
         AOS.init();
     </script>
+    <!-- Sertakan SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Include Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Include FileSaver.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/file-saver"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>

@@ -179,6 +179,7 @@ img {
     display: none;
     width: 100vw !important;
     height: 100%;
+    overflow-x: hidden;
 }
 
 .navigasi-youtube {
@@ -191,4 +192,91 @@ img {
     display: none;
     width: 100vw !important;
     height: 100%;
+}
+
+.loading-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    animation-timing-function: cubic-bezier(0.7, 0, 1, 2);
+}
+
+.loading-page {
+    animation: fadeIn 4s 1;
+}
+
+.first-ball,
+.second-ball,
+.third-ball {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #4286f4;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation:
+        horizontal 2s infinite,
+        vertical 1s infinite,
+        color 3s infinite;
+    animation-timing-function: cubic-bezier(0.3, 0, 0.7, 1), ease-in-out;
+    animation-delay: 0s, 0.25s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.second-ball {
+    animation-delay: 0.2s, 0.45s;
+    opacity: 0.7;
+}
+.third-ball {
+    animation-delay: 0.4s, 0.65s;
+    opacity: 0.5;
+}
+@keyframes horizontal {
+    0% {
+        left: -150px;
+    }
+    50% {
+        left: 150px;
+    }
+    100% {
+        left: -150px;
+    }
+}
+@keyframes vertical {
+    0% {
+        top: -50px;
+    }
+    50% {
+        top: 50px;
+    }
+    100% {
+        top: -50px;
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes color {
+    50% {
+        background: #cd43ef;
+    }
 }
